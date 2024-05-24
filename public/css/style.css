@@ -13,3 +13,11 @@
   align-items: center;
   
 }
+
+
+.tiny {
+  width: 0px !important;
+  height: 0px !important;
+  margin: 0 auto;
+ /* background-image: url("../img/portail.png"); */
+}

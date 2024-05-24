@@ -13,6 +13,11 @@ $(".h1").click(function() {
     console.log("clicked");
 });
 
+setTimeout(() => {
+    
+    $("main").animate({width : "100vw", height : "100vh"});
+}, 2000);
+
 
 
 
