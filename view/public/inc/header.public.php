@@ -1,5 +1,5 @@
 <header class="mt-3">
-<p class="h1 text-center" id="homeH1">Hi</p>
+<p class="h1 text-center" id="homepage_h1"></p>
 
 <nav class="navbar">
 <div class="container-fluid">
@@ -25,17 +25,15 @@
         }else {
           ?>
           <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="?controls" id="navControl"></a>
+          </li>
+          <li class="nav-item">
           <a class="nav-link" aria-current="page" href="?logout" id="navLogout"></a>
           </li>
           <?php
         }
         ?>
-      <!--
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
--->
+
 <form method="POST" class="d-flex flex-row">
     <button class="btn" value="en" type="submit" name="user_lang"><img src="img/gb.svg" alt="gbFlag" class="langFlag"></button>
     <button class="btn" value="fr" type="submit" name="user_lang"><img src="img/fr.svg" alt="frFlag" class="langFlag"></button>

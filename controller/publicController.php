@@ -1,4 +1,6 @@
 <?php
+$title = 'Home';
+
 if (isset($_POST["user_lang"])) {
     $_SESSION["user_lang"] = $_POST["user_lang"];
     
@@ -59,8 +61,16 @@ if (isset($_POST["nameInp"], $_POST["passInp"])) {
     }
 
 
+    if (isset($_GET["controls"])) {
+        $checkUserLevel = confirmUserId($_SESSION);
 
+        if ($checkUserLevel === false) {
+            $errorMessage = "Sorry but you can't get in that easily.<br><a href='?home'>Return</a>";
+            
+        }  
+        $title = "Site Controller";
+    }
     
-$title = 'Home';
+
 include "../view/public/pubhome.view.php";
 die ();
