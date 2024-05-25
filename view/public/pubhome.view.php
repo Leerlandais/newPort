@@ -17,11 +17,12 @@
             <p class="h2"><?=$errorMessage?></p>
             <?php
         }
-        var_dump($_SESSION);
+    //    var_dump($_SESSION);
         ?>
-    <?php if (isset($_GET["login"])) include("inc/login-form.php");?>
                   
-<?php include ("inc/header.public.php"); ?>
+    <?php include ("inc/header.public.php"); ?>
+    <?php if (isset($_GET["login"])) include("inc/login-form.php");?>
+    <?php if (isset($_GET["createUser"])) include("inc/createUser-form.php");?>
 
 
 <?php include ("inc/footer.public.php"); ?>

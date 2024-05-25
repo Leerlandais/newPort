@@ -28,3 +28,40 @@ $stmt = $db->prepare($sql);
         return $e->getMessage();
     }
 }
+
+
+function createNewUser(PDO $db, string $user, string $first, string $second, string $email, string $cryptPWD, string $lang) {
+  //  var_dump($db, $user, $first, $second, $email, $cryptPWD);
+    $sql = 'SELECT `np_user_username`
+            FROM `np_users`
+            WHERE `np_user_username` = ?';
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$user]);
+    if($stmt->rowCount() === 1) return false;
+
+    $create = "INSERT INTO `np_users`
+                (`np_user_username`,
+                `np_user_firstname`,
+                `np_user_lastname`,
+                `np_user_email`,
+                `np_user_pwd`,
+                `np_user_lang`)
+                VALUES (?,?,?,?,?,?)";
+    $newStmt = $db->prepare($create);
+    $newStmt->bindValue(1, $user);
+    $newStmt->bindValue(2, $first);
+    $newStmt->bindValue(3, $second);
+    $newStmt->bindValue(4, $email);
+    $newStmt->bindValue(5, $cryptPWD);
+    $newStmt->bindValue(6, $lang);
+
+    try{
+        $newStmt->execute();
+        return true;
+
+    }catch(Exception){
+        $errorMessage = "Couldn't create user";
+        return $errorMessage;
+    }
+
+}
