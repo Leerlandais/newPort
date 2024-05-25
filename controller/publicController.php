@@ -29,36 +29,42 @@ if (isset($_POST["nameInp"], $_POST["passInp"])) {
 
 
 // USER CREATION
- if (isset(
-           $_POST["newNomInp"],
+if (isset(
+    $_POST["newNomInp"],
            $_POST["firstInp"],
            $_POST["secondInp"],
            $_POST["emailInp"],
            $_POST["newPwdInp"],
            $_POST["language"]
            )
-    ){
-    $user     = standardClean($_POST["newNomInp"]);
-    $first    = standardClean($_POST["firstInp"]);
-    $second   = standardClean($_POST["secondInp"]);
-    $email    = emailClean($_POST["emailInp"]);
-    $cryptPWD = password_hash($_POST["newPwdInp"],PASSWORD_DEFAULT);
-    $lang     = standardClean($_POST["language"]);
+           ){
+               $user     = standardClean($_POST["newNomInp"]);
+               $first    = standardClean($_POST["firstInp"]);
+               $second   = standardClean($_POST["secondInp"]);
+               $email    = emailClean($_POST["emailInp"]);
+               $cryptPWD = password_hash($_POST["newPwdInp"],PASSWORD_DEFAULT);
+               $lang     = standardClean($_POST["language"]);
+               
+               $createLogin = createNewUser($db,
+               $user,
+               $first,
+               $second,
+               $email,
+               $cryptPWD,
+               $lang);
 
-    $createLogin = createNewUser($db,
-                                 $user,
-                                 $first,
-                                 $second,
-                                 $email,
-                                 $cryptPWD,
-                                 $lang);
-    if ($createLogin === true) {
-    attemptUserLogin($db, $user, $cryptPWD);
-    echo "<meta http-equiv='refresh' content='0'>";
-    }else {
-        $errorMessage = "That username already exists";
-    }
-    }
+               if ($createLogin === true) {
+                $loginNewUser = attemptUserLogin($db, $user, $_POST["newPwdInp"]);
+                if ($loginNewUser === true) {
+                    header("Location: ./");
+                    die();
+                 }else {
+                     $errorMessage = "Couldn't log in after creation";    
+                 }
+                }else {
+                    $errorMessage = "That username already exists";
+                }
+            }
 
 
     if (isset($_GET["controls"])) {

@@ -37,7 +37,8 @@ if (isset(
     $addNewSelector = addNewSelector($db, $selector, $english, $french);
         }
     
-    // Appel du page d'accueil Admin
+
+
 
     
     include "../view/public/pubhome.view.php";
