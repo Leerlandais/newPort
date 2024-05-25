@@ -1,4 +1,11 @@
 <?php
+if (isset($_POST["user_lang"])) {
+    $_SESSION["user_lang"] = $_POST["user_lang"];
+    
+    $texts    = createTextByUserLang($db, $_SESSION["user_lang"]);
+}
+
+
 
 // LOGIN CALL
 if (isset($_POST["userName"], 
@@ -13,7 +20,7 @@ if (isset($_POST["userName"],
                   die();
                 }else if ($loginAttempt === false) {
                     $title = "Incorrect Login";
-                    $myMessage = 'That be bad';
+                    $errorMessage = 'That be bad';
                     include "../view/public/pubhome.view.php";
                     die();
                 }else {

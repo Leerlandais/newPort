@@ -1,9 +1,12 @@
 <?php
-session_start();    
+session_start(); 
+if(!isset($_SESSION["user_lang"])) $_SESSION["user_lang"] = "en";   
 
 require_once("../config.php");
 require_once("../controller/dbConnectController.php");
 require_once("../model/laundryModel.php");
+require_once("../model/siteLanguageModel.php");
+require_once("../controller/jsonController.php");
 require_once("../model/loginModel.php");
 
 
