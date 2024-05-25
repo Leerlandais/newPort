@@ -8,28 +8,23 @@ if (isset($_POST["user_lang"])) {
 
 
 // LOGIN CALL
-if (isset($_POST["userName"], 
-          $_POST["userPwd"])) 
-          {
-              $name = standardClean($_POST["userName"]);
-              $pwd  = simpleTrim($_POST["userPwd"]);
-              
-              $loginAttempt = attemptUserLogin ($db, $name, $pwd);
-              if ($loginAttempt === true) {
-                  header("Location: ./");
-                  die();
-                }else if ($loginAttempt === false) {
-                    $title = "Incorrect Login";
-                    $errorMessage = 'That be bad';
-                    include "../view/public/pubhome.view.php";
-                    die();
-                }else {
-                    include "../view/public/pubhome.view.php";
-                    die();
-                }
-            }
-
+if (isset($_POST["nameInp"], $_POST["passInp"])) {
+    $name = standardClean($_POST["nameInp"]);
+    $pass = simpleTrim($_POST["passInp"]);
+        
+    $loginAttempt = attemptUserLogin ($db, $name, $pass);
+    if ($loginAttempt === true) {
+        header("Location: ./");
+        die();
+    }else {
+        
     // Appel du page d'accueil public
-    $title = 'Home';
+    $title = 'Incorrect Login';
     include "../view/public/pubhome.view.php";
     die ();
+}
+}
+
+$title = 'Home';
+include "../view/public/pubhome.view.php";
+die ();

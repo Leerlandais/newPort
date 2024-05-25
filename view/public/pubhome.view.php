@@ -17,8 +17,10 @@
             <p class="h2"><?=$errorMessage?></p>
             <?php
         }
-        // var_dump($_SESSION);
+        var_dump($_SESSION);
         ?>
+    <?php if (isset($_GET["login"])) include("inc/login-form.php");?>
+                  
 <?php include ("inc/header.public.php"); ?>
 
 
