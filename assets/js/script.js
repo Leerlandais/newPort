@@ -23,13 +23,22 @@ $(document).ready(function() {
 
 
 
- function makeGlobalText(datas) {
+function makeGlobalText(datas) {
     for (let data in datas) {
         let selector = datas[data].selector;
         let theText = datas[data].theText;
-        $(`#${selector}`).text(theText);
+        let element = $(`#${selector}`);
+            
+        element.text(theText);        
+            
+        if (element.next().attr('placeholder') !== undefined) {
+            console.log(`Element #${selector} has a placeholder attribute.`);
+            element.next().attr('placeholder', theText);
+        }
     }
- }
+}
+    
+
 
 
 }); // end ready
