@@ -25,6 +25,8 @@
     <?php if (isset($_GET["createUser"])) include("inc/createUser-form.php");?>
     <?php if (isset($_GET["controls"])) include("inc/site-controller.php");?>
 
+<!--    <p class="h5" id="forMarie"></p>  -->
+
 
 <?php include ("inc/footer.public.php"); ?>
 <?php require ("../view/cdn/jsBS.php") ?>
