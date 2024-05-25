@@ -23,6 +23,19 @@ if (isset($_GET["controls"])) {
     }  
     $title = "Site Controller";
 }
+
+if (isset(
+        $_POST["selectInp"],
+        $_POST["englishInp"],
+        $_POST["frenchInp"]
+        )
+    ){
+    $selector = standardClean($_POST["selectInp"]);
+    $english  = standardClean($_POST["englishInp"]);
+    $french   = standardClean($_POST["frenchInp"]);
+    
+    $addNewSelector = addNewSelector($db, $selector, $english, $french);
+        }
     
     // Appel du page d'accueil Admin
 

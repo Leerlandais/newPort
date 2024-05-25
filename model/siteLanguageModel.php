@@ -28,3 +28,27 @@ return $e->getMessage();
 }
 
 }
+
+
+
+function addNewSelector(PDO $db, string $selector, string $english, string $french) : bool | string {
+    $sql = "INSERT INTO `np_site`
+                        (`np_site_selector`,
+                         `np_site_en`,
+                         `np_site_fr`)
+            VALUES (?,?,?)";
+
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(1, $selector);
+    $stmt->bindValue(2, $english);
+    $stmt->bindValue(3, $french);
+
+    try{
+        $stmt->execute();
+        return true;
+
+    }catch(Exception){
+        $errorMessage = "Couldn't add that";
+        return $errorMessage;
+    }
+}

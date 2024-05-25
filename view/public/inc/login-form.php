@@ -5,4 +5,4 @@
     <input type="password" name="passInp" id="pwdInp" placeholder="Password">
     <button type="submit" id="submitLogin"></button>
 </form>
-<p class="h5" id="getCreate"><a href="?createUser">fgdg</a></p>
+<a href="?createUser"><p class="h5" id="getCreate"></p></a>

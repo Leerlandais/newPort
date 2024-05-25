@@ -14,6 +14,6 @@
     <label for="logLangEN"><img src="img/gb.svg" alt="gbFlag" class="langFlag">
     <input type="radio" name="language" id="logLangEN" value="en"></label>
     <label for="logLangFR"><img src="img/fr.svg" alt="frFlag" class="langFlag">
-    <input type="radio" name="language" id="logLangFR" value="fr"></label>
+    <input type="radio" name="language" id="logLangFR" value="fr" checked></label>
     <button type="submit" id="submitLogin"></button>
 </form>
