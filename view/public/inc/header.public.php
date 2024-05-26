@@ -13,7 +13,7 @@
         <a class="nav-link" aria-current="page" href="./" id="navContact"></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="./" id="navAbout"></a>
+        <a class="nav-link" aria-current="page" href="?about" id="navAbout"></a>
         </li>
 
     <?php if(!isset($_SESSION["id"])) {

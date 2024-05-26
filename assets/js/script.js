@@ -29,7 +29,7 @@ function makeGlobalText(datas) {
         let theText = datas[data].theText;
         let element = $(`#${selector}`);
             
-        element.text(theText);        
+        element.html(theText);        
             
         if (element.next().attr('placeholder') !== undefined) {
             console.log(`Element #${selector} has a placeholder attribute.`);
