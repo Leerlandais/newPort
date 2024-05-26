@@ -27,25 +27,25 @@ function getAllCss (PDO $db) {
 
 function updateGlobalCss(PDO $db, string $value, string $selector){  // don't forget to set  : bool | string once done
 
-    $sqlCopy = "SELECT `value` 
-                FROM `global_css` 
-                WHERE `selector` = ?"; 
+    $sqlCopy = "SELECT `np_css_value` 
+                FROM `np_css` 
+                WHERE `np_css_selector` = ?"; 
 
     $stmtCopy   = $db->prepare($sqlCopy);
     $stmtCopy->execute([$selector]);
     $result  = $stmtCopy->fetch();
 
     
-    $sqlOld  = "UPDATE `global_css`
-                SET `old_val` = ? 
-                WHERE `selector` = ?";
+    $sqlOld  = "UPDATE `np_css`
+                SET `np_css_old_val` = ? 
+                WHERE `np_css_selector` = ?";
 
-    $sqlNew  = "UPDATE `global_css`
-                SET `value` = ?
-                WHERE `selector` = ?";
+    $sqlNew  = "UPDATE `np_css`
+                SET `np_css_value` = ?
+                WHERE `np_css_selector` = ?";
     try {
     $stmtOld = $db->prepare($sqlOld);
-    $stmtOld->bindValue(1, $result["value"]);
+    $stmtOld->bindValue(1, $result["np_css_value"]);
     $stmtOld->bindValue(2, $selector);
     $stmtNew = $db->prepare($sqlNew);
     $stmtNew->bindValue(1, $value);
@@ -61,7 +61,7 @@ function updateGlobalCss(PDO $db, string $value, string $selector){  // don't fo
 
 function undoChangeToGlobal($db, $selector) {
     $sqlUndo = "SELECT `old_val`
-                FROM `global_css`
+                FROM `np_css`
                 WHERE `selector` = ?";
     $stmtUndo = $db->prepare($sqlUndo);
     $stmtUndo->bindValue(1, $selector);
@@ -70,7 +70,7 @@ function undoChangeToGlobal($db, $selector) {
  
 // var_dump($result["old_val"]);
 // die();
-    $sqlReplace = "UPDATE `global_css`
+    $sqlReplace = "UPDATE `np_css`
                    SET `value` = ?
                    WHERE `selector` = ?";
     $stmtReplace = $db->prepare($sqlReplace);
@@ -90,13 +90,13 @@ function undoChangeToGlobal($db, $selector) {
 
 function resetGlobalToDefault($db, $selector) {
     $sqlReset = "SELECT `def_val`
-                FROM `global_css`
+                FROM `np_css`
                 WHERE `selector` = ?";
     $stmtReset = $db->prepare($sqlReset);
     $stmtReset->bindValue(1, $selector);
     $stmtReset->execute();
     $result = $stmtReset->fetch();
-    $sqlReplace = "UPDATE `global_css`
+    $sqlReplace = "UPDATE `np_css`
                    SET `value` = ?
                    WHERE `selector` = ?";
     $stmtReplace = $db->prepare($sqlReplace);

@@ -60,7 +60,7 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
       <div class="d-flex flex-column mx-5">
       <form method="POST" id="globalForm" class="mt-5 w-auto">
     <label for="cssSelector" class="form-label text-info"><?=$css["attrib"]?></label>
-    <input type="text" name="cssSelector" style="display: none;" value="<?=$css["selector"]?>">
+    <input type="text" name="cssSelector" style="display: none;" value="<?=$css["attrib"]?>">
     <input type="text" class="form-control" name="cssValue"  value="<?=$css["val"]?>">
 
     <button type="submit" class="btn btn-primary">Submit</button>
