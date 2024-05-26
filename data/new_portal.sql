@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 26, 2024 at 11:55 AM
+-- Generation Time: May 26, 2024 at 05:29 PM
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.2.13
 
@@ -54,6 +54,31 @@ INSERT INTO `np_carousel` (`np_carousel_id`, `np_carousel_title`, `np_carousel_d
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `np_css`
+--
+
+DROP TABLE IF EXISTS `np_css`;
+CREATE TABLE IF NOT EXISTS `np_css` (
+  `np_css_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `np_css_selector` text NOT NULL,
+  `np_css_attribute` varchar(255) NOT NULL,
+  `np_css_value` varchar(1024) DEFAULT NULL,
+  `np_css_old_val` varchar(1024) DEFAULT NULL,
+  `np_css_def_val` varchar(1024) NOT NULL,
+  PRIMARY KEY (`np_css_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_css`
+--
+
+INSERT INTO `np_css` (`np_css_id`, `np_css_selector`, `np_css_attribute`, `np_css_value`, `np_css_old_val`, `np_css_def_val`) VALUES
+(4, 'headerNormal', 'border', '2px solid  hsla(211, 36%, 46%, 1)', '2px solid white', '2px solid  hsla(211, 36%, 46%, 1)'),
+(11, 'headerNormal', 'border-radius', '20px', '0px', '20px');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `np_site`
 --
 
@@ -65,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `np_site` (
   `np_site_fr` text NOT NULL,
   PRIMARY KEY (`np_site_id`),
   UNIQUE KEY `np_site_selector` (`np_site_selector`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `np_site`
@@ -97,7 +122,8 @@ INSERT INTO `np_site` (`np_site_id`, `np_site_selector`, `np_site_en`, `np_site_
 (24, 'carouselDesc1', 'Our second Integration Test. This one included Database manipulation and responsive layout', 'Notre deuxième test d&#039;intégration. Celui-ci comprenait la manipulation de la base de données et la mise en page réactive'),
 (25, 'carouselDesc2', 'This was my first site. Completed at the end of the 6 week Preformation', 'C&amp;#039;était mon premier site. Terminé à la fin de la préformation de 6 semaines'),
 (26, 'carouselDesc3', 'Our 3rd Integration Test. CRUD, Bootstrap, Leaflet etc', 'Notre 3ème Test d&amp;#039;Intégration. CRUD, Bootstrap, dépliant, etc.'),
-(27, 'carouselDesc4', 'An experiment in Javascript', 'Une expérience en Javascript');
+(27, 'carouselDesc4', 'An experiment in Javascript', 'Une expérience en Javascript'),
+(28, 'addCssLegend', 'Header CSS Controls', 'Contrôles CSS d&#039;en-tête');
 
 -- --------------------------------------------------------
 

@@ -2,7 +2,7 @@
 if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that easily.<br><a href='?home'>Return</a>") {
     die();
   }
-  // var_dump($_SESSION);
+  // ADD TEXT TO SITE
   $_SESSION["np_user_permission"] < 128 ? $block = "disabled" : $block = "";
   ?>
   <p class="h3 text-center" id="controlHeader"></p>
@@ -22,6 +22,10 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
 </div>
 
 
+
+<?php 
+// ADD CAROUSEL STUFF (NEED TO MOVE THE DESC TO TEXT HANDLER)
+?>
 <div class="container text-center">
   <fieldset class="reset"><legend  class="reset" id="addCarouselLegend"></legend>
   <form action="" method="POST" id = "add-carouselItem" class="d-flex flex-column align-items-center">
@@ -43,6 +47,10 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
 </div>
 </div>
 
+
+<?php 
+// ADD OR CHANGE CSS STUFF (UNFINISHED)
+?>
 <div class="container text-center">
 <fieldset class="reset w-100 d-flex"><legend  class="reset" id="addCssLegend"></legend>
 <div class="mb-4 d-flex flex-row flex-wrap w-auto">
@@ -51,7 +59,7 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
       ?>
       <div class="d-flex flex-column mx-5">
       <form method="POST" id="globalForm" class="mt-5 w-auto">
-    <label for="cssSelector" class="form-label text-info"><?=$css["selector"]?></label>
+    <label for="cssSelector" class="form-label text-info"><?=$css["attrib"]?></label>
     <input type="text" name="cssSelector" style="display: none;" value="<?=$css["selector"]?>">
     <input type="text" class="form-control" name="cssValue"  value="<?=$css["val"]?>">
 

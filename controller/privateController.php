@@ -64,6 +64,30 @@ if (isset(
     $addNewCarousel = addNewCarouselItem($db, $title, $descEn, $descFr, $img, $imgW, $imgH);
     }
 
+// UPDATE GLOBAL CSS
+if (isset($_POST["cssSelector"],
+          $_POST["cssValue"])) {
+
+$value      = standardClean($_POST["cssValue"]);
+$selector   = standardClean($_POST["cssSelector"]);
+
+$changeCSS  = updateGlobalCss($db, $value, $selector);
+
+}
+
+
+// UNDO CHANGE TO GLOBAL
+if (isset($_POST["undoChange"])) {
+$selector   = standardClean($_POST["cssReset"]);    
+$undo       = undoChangeToGlobal($db, $selector);
+}
+
+// RESET TO DEFAULT
+if (isset($_POST["resetDefault"])) {
+$selector   = standardClean($_POST["cssReset"]);        
+$reset      = resetGlobalToDefault($db, $selector);
+}
+
 
     $carouselItems = getAllCarouselItems($db);
     

@@ -21,6 +21,10 @@ function getAllCss (PDO $db) {
 }
 
 
+// NEED TO CORRECT ALL OF THE FOLLOWING FUNCTIONS AS WELL AS ADD THEM TO THE PRIVATE CONTROLLER
+
+// START WITH THIS ONE - CHANGE THE SQL TO MATCH THE ACTUAL DB (AND NOT THE OLD ONE) - SAME FOR ALL OTHER FUNCTIONS BELOW
+
 function updateGlobalCss(PDO $db, string $value, string $selector){  // don't forget to set  : bool | string once done
 
     $sqlCopy = "SELECT `value` 

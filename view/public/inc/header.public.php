@@ -1,4 +1,4 @@
-<header class="m-5 " id="headerNormal">
+<header class="m-5" id="headerNormal">
 <p class="h1 text-center" id="homepage_h1"></p>
 
 <nav class="navbar">
