@@ -28,13 +28,23 @@ $i++;
         if ($j === 0) {
 ?>
     <div class="carousel-item active">
-      <img src="<?=$item["np_carousel_img"]?>" class="d-block w-50 my-0 mx-auto" style="width: 200px; height: 200px;" alt="<?=$item["np_carousel_title"]?>">
+      <img src="<?=$item["np_carousel_img"]?>" class="d-block w-25 my-0 mx-auto"  alt="<?=$item["np_carousel_title"]?>">
+           <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-light"><?=$item["np_carousel_title"]?></h5>
+        <p id="carouselDesc<?=$j?>" class="text-light"></p>
+      </div>
+
     </div>
 <?php
 }else {
 ?>
     <div class="carousel-item">
-      <img src="<?=$item["np_carousel_img"]?>" class="d-block w-50 my-0 mx-auto" style="width: 200px; height: 200px;" alt="<?=$item["np_carousel_title"]?>">
+      <img src="<?=$item["np_carousel_img"]?>" class="d-block w-25 my-0 mx-auto"  alt="<?=$item["np_carousel_title"]?>">
+           <div class="carousel-caption d-none d-md-block">
+           <h5 class="text-light"><?=$item["np_carousel_title"]?></h5>
+        <p id="carouselDesc<?=$j?>" class="text-light"></p>
+      </div>
+
     </div>
 <?php
 }
