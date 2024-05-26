@@ -31,7 +31,7 @@
             }else if (isset($_GET["about"])) {
                 include("inc/about-me.php");
             }else {
-             include("inc/carousel-home.php");
+            //  include("inc/carousel-home.php");
             }
             ?>
 

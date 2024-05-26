@@ -1,4 +1,4 @@
-<header class="my-5">
+<header class="m-5 " id="headerNormal">
 <p class="h1 text-center" id="homepage_h1"></p>
 
 <nav class="navbar">
@@ -44,5 +44,5 @@
 </header>
 
 
-<!-- <img src="img/gb.svg" alt="gbFlag" class="langFlag">
-<img src="img/fr.svg" alt="frFlag" class="langFlag"> -->
+ <!-- <img src="img/gb.svg" alt="gbFlag" class="langFlag">
+ <img src="img/fr.svg" alt="frFlag" class="langFlag"> -->

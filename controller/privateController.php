@@ -1,4 +1,5 @@
 <?php
+$siteCss = getAllCss($db);
 
 $title = 'homeAdmin';
 // LOGOUT CALL
@@ -13,7 +14,7 @@ if (isset($_POST["user_lang"])) {
     
     $texts    = createTextByUserLang($db, $_SESSION["user_lang"]);
 }
-
+ 
 
 // CONTROL CALL AND PROTECTION
 if (isset($_GET["controls"])) {

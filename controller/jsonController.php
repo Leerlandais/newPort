@@ -9,3 +9,12 @@ if (isset($_GET['json'])) {
     exit();
 }
 
+
+
+if (isset($_GET['jsonCSS'])) {
+    $datasCSS = getAllCss($db);
+    if (!is_string($datasCSS)) {
+        echo json_encode($datasCSS);
+    }
+    exit();
+}

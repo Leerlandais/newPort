@@ -1,6 +1,6 @@
 <?php
 $title = 'Home';
-
+$siteCss = getAllCss($db);
 if (isset($_POST["user_lang"])) {
     $_SESSION["user_lang"] = $_POST["user_lang"];
     
@@ -26,7 +26,7 @@ if (isset($_POST["nameInp"], $_POST["passInp"])) {
     die ();
 }
 }
-
+ 
 
 // USER CREATION
 if (isset(
