@@ -7,6 +7,7 @@ require_once("../controller/dbConnectController.php");
 require_once("../model/laundryModel.php");
 require_once("../model/siteProtectionModel.php");
 require_once("../model/siteLanguageModel.php");
+require_once("../model/siteCarouselModel.php");
 require_once("../controller/jsonController.php");
 require_once("../model/loginModel.php");
 

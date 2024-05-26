@@ -76,7 +76,11 @@ if (isset(
         }  
         $title = "Site Controller";
     }
-    
 
+
+
+    
+    
+$carouselItems = getAllCarouselItems($db);
 include "../view/public/pubhome.view.php";
 die ();

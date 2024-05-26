@@ -1,17 +1,21 @@
 <?php
 
 $title = 'homeAdmin';
-
+// LOGOUT CALL
 if (isset($_GET["logout"])) {
     include_once("../model/logoutModel.php"); 
     die();   
 }
+
+// LANGUAGE SELECTION
 if (isset($_POST["user_lang"])) {
     $_SESSION["user_lang"] = $_POST["user_lang"];
     
     $texts    = createTextByUserLang($db, $_SESSION["user_lang"]);
 }
 
+
+// CONTROL CALL AND PROTECTION
 if (isset($_GET["controls"])) {
     $checkUserLevel = confirmUserId($_SESSION);
 
@@ -24,6 +28,8 @@ if (isset($_GET["controls"])) {
     $title = "Site Controller";
 }
 
+
+// ADD TEXT
 if (isset(
         $_POST["selectInp"],
         $_POST["englishInp"],
@@ -37,8 +43,25 @@ if (isset(
     $addNewSelector = addNewSelector($db, $selector, $english, $french);
         }
     
+// ADD CAROUSEL ITEM
+if (isset(
+          $_POST["carouselTitle"],
+          $_POST["carouselDesc"],
+          $_POST["carouselImg"],
+          $_POST["carouselWidth"],
+          $_POST["carouselHeight"]
+          )
+    ){
+       $title = standardClean($_POST["carouselTitle"]);
+       $desc  = standardClean($_POST["carouselDesc"]);
+       $img   = standardClean($_POST["carouselImg"]);
+       $imgW  = standardClean($_POST["carouselWidth"]);
+       $imgH  = standardClean($_POST["carouselHeight"]);
+
+    $addNewCarousel = addNewCarouselItem($db, $title, $desc, $img, $imgW, $imgH);
+    }
 
 
-
+    $carouselItems = getAllCarouselItems($db);
     
     include "../view/public/pubhome.view.php";

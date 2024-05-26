@@ -5,19 +5,28 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
 
-  <!--  Do it with DB
+  
+  
+
+  
   <div class="carousel-inner">
+<?php
+    foreach($carouselItems as $item) {
+?>
     <div class="carousel-item active">
-      <img src="img/fr.svg" class="d-block w-100" alt="...">
+      <img src="<?=$item["np_carousel_img"]?>" class="d-block w-100" style="width: 200px; height: 200px;" alt="<?=$item["np_carousel_title"]?>">
     </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
--->
+<?php
+}
+?>
+</div>
+<?php
+
+?>
+
+<?php
+
+?>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>

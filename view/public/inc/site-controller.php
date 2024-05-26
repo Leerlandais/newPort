@@ -25,5 +25,9 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
     <input type="text" name="carouselDesc" id="carouselDesc" aria-describedby="carouselDescField" placeholder="Description" <?=$block?>>
     <label for="carouselImg" id="carouselImg"></label>
     <input type="text" name="carouselImg" id="carouselImg" aria-describedby="carouselImgField" placeholder="Image Source" <?=$block?>>
-    <button type="submit" id="submitLogin" <?=$block?>></button>
+    <label for="carouselWidth" id="carouselWidth"></label>
+    <input type="text" name="carouselWidth" id="carouselWidth" aria-describedby="carouselImgWidth" placeholder="Image Width" <?=$block?>>
+    <label for="carouselHeight" id="carouselHeight"></label>
+    <input type="text" name="carouselHeight" id="carouselHeight" aria-describedby="carouselImgHeight" placeholder="Image Height" <?=$block?>>
+    <button type="submit" id="submitCarousel" <?=$block?>></button>
 </form>
