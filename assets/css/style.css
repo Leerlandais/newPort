@@ -14,8 +14,23 @@
   
 }
 
-.langFlag {
-  width: 1vw;
-  height: 1vh;
+.langEN {
+  background-image: url("../img/gb.svg");
+  background-size: cover;
+  width: 2vw;
+  height: 2vh;
+  margin: 0 0.5vw;
 }
 
+.langFR {
+  background-image: url("../img/fr.svg");
+  background-size: cover;
+  width: 2vw;
+  height: 2vh;
+  margin: 0 0.5vw;
+}
+
+.langFlag {
+  width: 2vw;
+  height: 2vh;
+}

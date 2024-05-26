@@ -16,3 +16,14 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
     <input type="text" name="frenchInp" id="frenchInp" aria-describedby="userNameField" placeholder="french version" <?=$block?>>
     <button type="submit" id="submitLogin" <?=$block?>></button>
 </form>
+
+
+<form action="" method="POST" id = "add-carouselItem">
+    <label for="carouselTitle" id="carouselTitle"></label>
+    <input type="text" name="carouselTitle" id="carouselTitle" aria-describedby="carouselTitleField" placeholder="Title" <?=$block?>>
+    <label for="carouselDesc" id="carouselDesc"></label>
+    <input type="text" name="carouselDesc" id="carouselDesc" aria-describedby="carouselDescField" placeholder="Description" <?=$block?>>
+    <label for="carouselImg" id="carouselImg"></label>
+    <input type="text" name="carouselImg" id="carouselImg" aria-describedby="carouselImgField" placeholder="Image Source" <?=$block?>>
+    <button type="submit" id="submitLogin" <?=$block?>></button>
+</form>

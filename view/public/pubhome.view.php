@@ -24,6 +24,7 @@
     <?php if (isset($_GET["login"])) include("inc/login-form.php");?>
     <?php if (isset($_GET["createUser"])) include("inc/createUser-form.php");?>
     <?php if (isset($_GET["controls"])) include("inc/site-controller.php");?>
+    <?php include("inc/carousel-home.php");?>
 
 <!--    <p class="h5" id="forMarie"></p>  -->
 
