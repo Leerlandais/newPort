@@ -2,7 +2,8 @@
 
 function getAllCarouselItems(PDO $db) : array | string {
     $sql = "SELECT *
-            FROM `np_carousel`";
+            FROM `np_carousel`
+            WHERE `np_carousel_vis` = 1";
 
     $query = $db->query($sql);
 
@@ -25,7 +26,8 @@ function getAllCarouselItems(PDO $db) : array | string {
 
 function addNewCarouselItem(PDO $db, 
                             string $title, 
-                            string $desc, 
+                            string $descEn, 
+                            string $descFr,
                             string $img, 
                             string $imgW, 
                             string $imgH) : bool | string 
@@ -33,17 +35,19 @@ function addNewCarouselItem(PDO $db,
 
     $sql = "INSERT INTO `np_carousel`
                         (`np_carousel_title`,
-                         `np_carousel_desc`,
+                         `np_carousel_desc_en`,
+                         `np_carousel_desc_fr`,
                          `np_carousel_img`,
                          `np_carousel_width`, 
                          `np_carousel_height`) 
-            VALUES (?,?,?,?,?)";
+            VALUES (?,?,?,?,?,?)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(1, $title);
-    $stmt->bindValue(2, $desc);
-    $stmt->bindValue(3, $img);
-    $stmt->bindValue(4, $imgW);
-    $stmt->bindValue(5, $imgH);
+    $stmt->bindValue(2, $descEn);
+    $stmt->bindValue(3, $descFr);
+    $stmt->bindValue(4, $img);
+    $stmt->bindValue(5, $imgW);
+    $stmt->bindValue(6, $imgH);
 
     try{
         $stmt->execute();

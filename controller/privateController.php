@@ -46,19 +46,21 @@ if (isset(
 // ADD CAROUSEL ITEM
 if (isset(
           $_POST["carouselTitle"],
-          $_POST["carouselDesc"],
+          $_POST["carouselDescEn"],
+          $_POST["carouselDescFr"],
           $_POST["carouselImg"],
           $_POST["carouselWidth"],
           $_POST["carouselHeight"]
           )
     ){
-       $title = standardClean($_POST["carouselTitle"]);
-       $desc  = standardClean($_POST["carouselDesc"]);
-       $img   = standardClean($_POST["carouselImg"]);
-       $imgW  = standardClean($_POST["carouselWidth"]);
-       $imgH  = standardClean($_POST["carouselHeight"]);
+       $title   = standardClean($_POST["carouselTitle"]);
+       $descEn  = standardClean($_POST["carouselDescEn"]);
+       $descFr  = standardClean($_POST["carouselDescFr"]);
+       $img     = standardClean($_POST["carouselImg"]);
+       $imgW    = standardClean($_POST["carouselWidth"]);
+       $imgH    = standardClean($_POST["carouselHeight"]);
 
-    $addNewCarousel = addNewCarouselItem($db, $title, $desc, $img, $imgW, $imgH);
+    $addNewCarousel = addNewCarouselItem($db, $title, $descEn, $descFr, $img, $imgW, $imgH);
     }
 
 
