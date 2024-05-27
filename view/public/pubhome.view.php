@@ -21,6 +21,9 @@
         ?>
                   
     <?php include ("inc/header.public.php"); ?>
+    <h2 id="showThis"></h2>
+    <h3 id="showThat"></h3>
+    <h4 id="showOther"></h4>
     
     <?php if (isset($_GET["login"])) { 
             include("inc/login-form.php"); 

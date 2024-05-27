@@ -35,19 +35,24 @@ $(document).ready(function() {
             });
 
 function makeGlobalText(datas) {
+    let element = '';
     for (let data in datas) {
         let selector = datas[data].selector;
-        let theText = datas[data].theText;
-        let element = $(`#${selector}`);
-            
+        let theText  = datas[data].theText;
+        let theType     = datas[data].theType;
+        console.log(selector);
+        theType === "id" ? 
+        element = $(`#${selector}`) :
+        element =  $(`.${selector}`);
         element.html(theText);        
+    }
             
         if (element.next().attr('placeholder') !== undefined) {
             console.log(`Element #${selector} has a placeholder attribute.`);
             element.next().attr('placeholder', theText);
         }
     }
-}
+
 
 function makeGlobalCSS(datas) {
     datas.forEach(data => {

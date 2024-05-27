@@ -34,14 +34,16 @@ if (isset($_GET["controls"])) {
 if (isset(
         $_POST["selectInp"],
         $_POST["englishInp"],
-        $_POST["frenchInp"]
+        $_POST["frenchInp"],
+        $_POST["typeInp"]
         )
     ){
     $selector = standardClean($_POST["selectInp"]);
     $english  = standardClean($_POST["englishInp"]);
     $french   = standardClean($_POST["frenchInp"]);
+    $type     = standardClean($_POST["typeInp"]);
     
-    $addNewSelector = addNewSelector($db, $selector, $english, $french);
+    $addNewSelector = addNewSelector($db, $selector, $english, $french, $type);
         }
     
 // ADD CAROUSEL ITEM
@@ -69,9 +71,9 @@ if (isset($_POST["cssSelector"],
           $_POST["cssValue"])) {
 
 $value      = standardClean($_POST["cssValue"]);
-$selector   = standardClean($_POST["cssSelector"]);
+$attrib     = standardClean($_POST["cssSelector"]);
 
-$changeCSS  = updateGlobalCss($db, $value, $selector);
+$changeCSS  = updateGlobalCss($db, $value, $attrib);
 
 }
 

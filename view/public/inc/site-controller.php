@@ -16,6 +16,12 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
       <input type="text" name="englishInp" id="englishInp" aria-describedby="userNameField" placeholder="english version" <?=$block?>>
       <label for="frenchInp" id="frLabelName"></label>
       <input type="text" name="frenchInp" id="frenchInp" aria-describedby="userNameField" placeholder="french version" <?=$block?>>
+      <div class="d-flex flex-row">
+      <label for="typeInpId" id="typeInpIdLabel" class="mx-2"></label>
+      <input type="radio" name="typeInp" id="typeInpId" checked value="id">
+      <label for="typeInpClass" id="typeInpClassLabel" class="mx-2"></label>
+      <input type="radio" name="typeInp" id="typeInpClass" value="class">
+      </div>
       <button type="submit" id="submitLogin" <?=$block?>></button>
     </form>
   </fieldset>
@@ -60,17 +66,17 @@ if (isset($errorMessage) && $errorMessage == "Sorry but you can't get in that ea
       <div class="d-flex flex-column mx-5">
       <form method="POST" id="globalForm" class="mt-5 w-auto">
     <label for="cssSelector" class="form-label text-info"><?=$css["attrib"]?></label>
-    <input type="text" name="cssSelector" style="display: none;" value="<?=$css["attrib"]?>">
-    <input type="text" class="form-control" name="cssValue"  value="<?=$css["val"]?>">
+    <input type="text" name="cssSelector" style="display: none;" value="<?=$css["attrib"]?>" <?=$block?>>
+    <input type="text" class="form-control" name="cssValue"  value="<?=$css["val"]?>" <?=$block?>>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary submitButton" <?=$block?>></button>
   </form>
   
   <form method="POST" id="globalFormOpt" class="mt-1 w-auto">
     
-    <input type="text" name="cssReset" style="display: none;" value="<?=$css["selector"]?>">
-    <button type="submit" class="btn btn-primary" name="undoChange">Undo Change</button>
-    <button type="submit" class="btn btn-primary" name="resetDefault">Reset to Default</button>
+    <input type="text" name="cssReset" style="display: none;" value="<?=$css["attrib"]?>">
+    <button type="submit" class="btn btn-primary undoButton" name="undoChange"  <?=$block?>></button>
+    <button type="submit" class="btn btn-primary resetButton" name="resetDefault"  <?=$block?>></button>
   </form> 
 </div>
   
