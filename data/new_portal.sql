@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 26, 2024 at 05:29 PM
+-- Generation Time: May 27, 2024 at 04:49 AM
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.2.13
 
@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS `np_css` (
 --
 
 INSERT INTO `np_css` (`np_css_id`, `np_css_selector`, `np_css_attribute`, `np_css_value`, `np_css_old_val`, `np_css_def_val`) VALUES
-(4, 'headerNormal', 'border', '2px solid  hsla(211, 36%, 46%, 1)', '2px solid white', '2px solid  hsla(211, 36%, 46%, 1)'),
-(11, 'headerNormal', 'border-radius', '20px', '0px', '20px');
+(4, 'headerNormal', 'border', '2px solid  hsla(211, 36%, 46%, 1)', '2px solid  hsla(211, 36%, 46%, 1)', '2px solid  hsla(211, 36%, 46%, 1)'),
+(11, 'headerNormal', 'border-radius', '20px', '2px solid  hsla(211, 36%, 46%, 1)', '20px');
 
 -- --------------------------------------------------------
 
